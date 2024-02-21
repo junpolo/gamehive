@@ -1,5 +1,7 @@
+import { Typography } from "@mui/material";
+
 const EntryScene = () => {
-  return <div>Auth</div>;
+  return <Typography>Auth</Typography>;
 };
 
 export default EntryScene;
