@@ -1,7 +1,13 @@
-import { Typography } from "@mui/material";
+import GameList from "@/@core/component/game-list.component";
+import { Box, Typography } from "@mui/material";
 
 const EntryScene = () => {
-  return <Typography>Auth Scene</Typography>;
+  return (
+    <Box>
+      <Typography>Auth Scene</Typography>
+      <GameList />
+    </Box>
+  );
 };
 
 export default EntryScene;
