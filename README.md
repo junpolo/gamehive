@@ -10,5 +10,8 @@ A hackathon project
 
 ### Installation
 
+_(replace `bun` with any package manager of your choice )_
+
 - Clone the repository
-- run `bun run dev` in the command _(replace `bun` with any package manager of your choice )_
+- run `bun install`
+- run `bun run dev` in the command
