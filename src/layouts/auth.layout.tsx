@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 export const AuthLayout = () => {
   return (
     <main>
-      <Typography>Auth Layout</Typography>
+      <Typography variant="h3">Auth Layout</Typography>
       <Outlet />
     </main>
   );
