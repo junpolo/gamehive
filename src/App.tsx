@@ -1,7 +1,11 @@
-import { Typography } from "@mui/material";
+import { BaseRouter } from "@core/routers";
 
 function App() {
-  return <Typography variant="h1">Hello World</Typography>;
+  return (
+    <>
+      <BaseRouter />
+    </>
+  );
 }
 
 export default App;
