@@ -1,11 +1,12 @@
+import { useMemo } from "react";
+import { createTheme, responsiveFontSizes } from "@mui/material";
+
 import {
   lightThemePalette,
   darkThemePalette,
   componentsConfig,
   fontConfig,
 } from "@core/theme";
-import { createTheme } from "@mui/material";
-import { useMemo } from "react";
 
 type ColorModes = "light" | "dark";
 
@@ -30,5 +31,5 @@ export const useCreateTheme = () => {
     [paletteOptions]
   );
 
-  return theme;
+  return responsiveFontSizes(theme);
 };
