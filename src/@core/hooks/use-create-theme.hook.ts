@@ -2,6 +2,7 @@ import {
   lightThemePalette,
   darkThemePalette,
   componentsConfig,
+  fontConfig,
 } from "@core/theme";
 import { createTheme } from "@mui/material";
 import { useMemo } from "react";
@@ -9,7 +10,7 @@ import { useMemo } from "react";
 type ColorModes = "light" | "dark";
 
 export const useCreateTheme = () => {
-  const COLOR_MODE: ColorModes = "light";
+  const COLOR_MODE = "dark" as ColorModes;
 
   const paletteOptions =
     COLOR_MODE === "light" ? lightThemePalette : darkThemePalette;
@@ -17,6 +18,9 @@ export const useCreateTheme = () => {
   const theme = useMemo(
     () =>
       createTheme({
+        typography: {
+          ...fontConfig,
+        },
         palette: {
           mode: COLOR_MODE,
           ...paletteOptions,
