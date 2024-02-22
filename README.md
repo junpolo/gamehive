@@ -13,5 +13,6 @@ A hackathon project
 _(replace `bun` with any package manager of your choice )_
 
 - Clone the repository
+- run `nvm use` _(if you have nvm installed)_
 - run `bun install`
 - run `bun run dev` in the command

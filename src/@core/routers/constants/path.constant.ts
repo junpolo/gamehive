@@ -1,6 +1,6 @@
-export const AUTH_PATH = {
+export const HOME_PATH = {
   root: "/",
-  login: "/login",
+  auth: "/auth",
 };
 
 export const APP_PATH = {
