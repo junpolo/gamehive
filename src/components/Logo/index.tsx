@@ -12,6 +12,7 @@ export const Logo = () => {
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         width: "max-content",
+        cursor: "default",
       }}
     >
       GameHive

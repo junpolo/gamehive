@@ -69,7 +69,7 @@ const HomeScene = () => {
               textTransform: "capitalize",
               background: `linear-gradient(to right, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
             }}
-            onClick={() => navigate("auth")}
+            onClick={() => navigate("/auth")}
           >
             Explore The Hive
           </Button>
