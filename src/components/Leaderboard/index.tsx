@@ -46,7 +46,6 @@ export const Leaderboard = () => {
           padding: 3,
           display: "flex",
           width: "100%",
-          height: 350,
           flexDirection: "column",
           position: "relative",
           //   backgroundImage: "linear-gradient(to top, #000000a8 0%, #fff0 30%)",
@@ -90,7 +89,7 @@ export const Leaderboard = () => {
                     <Typography variant="caption" fontWeight={600}>
                       {data.gameName}
                     </Typography>
-                    <Typography fontSize={11}>{data.peak}</Typography>
+                    <Typography variant="caption">{data.peak}</Typography>
                   </Grid>
                 </Grid>
                 <Grid>
@@ -102,7 +101,7 @@ export const Leaderboard = () => {
                       </Typography>
                     }
                   /> */}
-                  <Typography fontSize={11} fontWeight={700}>
+                  <Typography variant="caption" fontWeight={700}>
                     {data.developer}
                   </Typography>
                 </Grid>
@@ -121,7 +120,12 @@ export const Leaderboard = () => {
           }}
           size="small"
         >
-          <Typography p={0.5} fontSize={11} fontWeight={600} color={"black"}>
+          <Typography
+            p={0.5}
+            variant="caption"
+            fontWeight={600}
+            color={"black"}
+          >
             View All Leaderboards
           </Typography>
         </Button>

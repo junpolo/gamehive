@@ -5,6 +5,7 @@ import {
   Paper,
   Slide,
   Typography,
+  useTheme,
 } from "@mui/material";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 
@@ -12,6 +13,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export const FeatureGames = () => {
+  const theme = useTheme();
+
   const hiveBackground =
     "https://cdn.pixabay.com/photo/2012/04/18/16/09/beehive-37436_1280.png";
 
@@ -71,7 +74,7 @@ export const FeatureGames = () => {
                 {slide.header}
               </Typography>
               <Grid item display={"flex"} gap={1}>
-                <Typography variant="h5" fontWeight={700} fontSize={21}>
+                <Typography variant="h6" fontWeight={700} color={"black"}>
                   {slide.title}
                 </Typography>
               </Grid>
@@ -80,6 +83,7 @@ export const FeatureGames = () => {
                 pt={2}
                 fontWeight={500}
                 fontSize={11.5}
+                color={"black"}
               >
                 {slide.subTitle}
               </Typography>
@@ -95,7 +99,7 @@ export const FeatureGames = () => {
                 alignItems={"center"}
                 padding={0.5}
               >
-                <Typography fontSize={13} fontWeight={600}>
+                <Typography fontSize={13} fontWeight={600} color={"black"}>
                   Play Trailer
                 </Typography>
                 <IconButton
@@ -103,7 +107,7 @@ export const FeatureGames = () => {
                   aria-label="add an alarm"
                   sx={{ padding: 0 }}
                 >
-                  <PlayCircleIcon />
+                  <PlayCircleIcon color="success" />
                 </IconButton>
               </Grid>
             </Grid>

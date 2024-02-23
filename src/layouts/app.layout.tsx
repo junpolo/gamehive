@@ -1,10 +1,14 @@
-import { Typography } from "@mui/material";
 import { Outlet } from "react-router-dom";
+import { AppDrawer } from "@/components/App/app-drawer";
+import { Grid } from "@mui/material";
 
 export const AppLayout = () => {
   return (
     <main>
-      <Typography variant="h3">App Layout</Typography>
+      <Grid>
+        <AppDrawer />
+      </Grid>
+
       <Outlet />
     </main>
   );
