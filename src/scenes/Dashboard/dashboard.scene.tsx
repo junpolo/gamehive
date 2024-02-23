@@ -1,36 +1,36 @@
 import { FeatureGames, Leaderboard } from "@/components";
-import { Grid, Typography } from "@mui/material";
+import {
+  Card,
+  Grid,
+  InputAdornment,
+  Stack,
+  TextField,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { Outlet } from "react-router-dom";
+import { Search } from "@mui/icons-material";
 
 const DashboardScene = () => {
+  const theme = useTheme();
+  const isScreenLarge = useMediaQuery(theme.breakpoints.up("lg"));
   return (
     <Grid
+      container
       justifyContent={"center"}
-      alignItems={"center"}
-      display={"flex"}
-      flexDirection={"column"}
-      padding={3}
+      spacing={{ xs: 5, md: 10 }}
+      p={5}
+      pt={{ xs: 13 }}
     >
-      <Typography variant="h3">App Layout</Typography>
-      <Outlet />
-      <Grid
-        display={"flex"}
-        padding={3}
-        gap={8}
-        alignItems={"flex-start"}
-        justifyContent={"center"}
-      >
-        <Grid container width={650}>
+      <Grid item md={7} xs={12}>
+        <Stack spacing={{ xs: 5, md: 10 }}>
           <FeatureGames />
-        </Grid>
-        <Grid
-          container
-          alignItems={"center"}
-          justifyContent={"center"}
-          width={450}
-        >
-          <Leaderboard />
-        </Grid>
+          <FeatureGames />
+        </Stack>
+      </Grid>
+      <Grid item md={3} xs={12}>
+        <Leaderboard />
       </Grid>
     </Grid>
   );

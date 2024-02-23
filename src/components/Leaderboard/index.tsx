@@ -1,6 +1,18 @@
-import { Button, Divider, Grid, Paper, Typography } from "@mui/material";
+import {
+  Button,
+  Divider,
+  Grid,
+  Paper,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
 export const Leaderboard = () => {
+  const theme = useTheme();
+  const isScreenLarge = useMediaQuery(theme.breakpoints.up("lg"));
+
   const data = [
     {
       gameName: "Valorant",
@@ -38,62 +50,75 @@ export const Leaderboard = () => {
       logo: "https://www.freepnglogos.com/uploads/download-destiny-logo/destiny-2-destiny-logo-nouvelles-informations-sur-destiny-14.png",
       developer: "Bungie Inc.",
     },
+    {
+      gameName: "Destiny 2",
+      peak: "9.2k+",
+      logo: "https://www.freepnglogos.com/uploads/download-destiny-logo/destiny-2-destiny-logo-nouvelles-informations-sur-destiny-14.png",
+      developer: "Bungie Inc.",
+    },
+    {
+      gameName: "Destiny 2",
+      peak: "9.2k+",
+      logo: "https://www.freepnglogos.com/uploads/download-destiny-logo/destiny-2-destiny-logo-nouvelles-informations-sur-destiny-14.png",
+      developer: "Bungie Inc.",
+    },
+    {
+      gameName: "Destiny 2",
+      peak: "9.2k+",
+      logo: "https://www.freepnglogos.com/uploads/download-destiny-logo/destiny-2-destiny-logo-nouvelles-informations-sur-destiny-14.png",
+      developer: "Bungie Inc.",
+    },
   ];
   return (
-    <Grid container>
-      <Paper
+    <Paper
+      sx={{
+        padding: 3,
+        //   backgroundImage: "linear-gradient(to top, #000000a8 0%, #fff0 30%)",
+        //   zIndex: 0,
+      }}
+    >
+      <Grid item display={"flex"} flexDirection={"column"} paddingBottom={2}>
+        <Typography fontWeight={600}>Leaderboard</Typography>
+        <Typography color={"gray"} variant="caption" fontWeight={500}>
+          Most played games for this week.
+        </Typography>
+      </Grid>
+      <Stack
         sx={{
-          padding: 3,
-          display: "flex",
-          width: "100%",
-          flexDirection: "column",
-          position: "relative",
-          //   backgroundImage: "linear-gradient(to top, #000000a8 0%, #fff0 30%)",
-          //   zIndex: 0,
+          overflow: "auto",
+          "-ms-overflow-style": "none",
+          "scrollbar-width": "none",
         }}
       >
-        <Grid item display={"flex"} flexDirection={"column"} paddingBottom={2}>
-          <Typography fontWeight={600}>Leaderboard</Typography>
-          <Typography color={"gray"} variant="caption" fontWeight={500}>
-            Most played games for this week.
-          </Typography>
-        </Grid>
-        <Grid
-          sx={{
-            overflow: "auto",
-            "-ms-overflow-style": "none",
-            "scrollbar-width": "none",
-          }}
-        >
-          {data.map((data, index) => (
-            <>
-              <Grid
-                key={index}
-                mb={1}
-                display={"flex"}
-                flexDirection={"row"}
-                justifyContent={"space-between"}
-                pt={2}
-              >
-                <Grid display={"flex"}>
-                  <img
-                    style={{
-                      height: 30,
-                      marginRight: 15,
-                      marginTop: 4,
-                    }}
-                    src={data.logo}
-                    className="img"
-                  />
-                  <Grid display={"flex"} flexDirection={"column"}>
-                    <Typography variant="caption" fontWeight={600}>
-                      {data.gameName}
-                    </Typography>
-                    <Typography variant="caption">{data.peak}</Typography>
-                  </Grid>
+        {data.map((data, index) => (
+          <>
+            <Grid
+              key={index}
+              mb={1}
+              display={"flex"}
+              flexDirection={"row"}
+              justifyContent={"space-between"}
+              pt={2}
+            >
+              <Grid display={"flex"}>
+                <img
+                  style={{
+                    height: 30,
+                    marginRight: 15,
+                    marginTop: 4,
+                  }}
+                  src={data.logo}
+                  className="img"
+                />
+                <Grid display={"flex"} flexDirection={"column"}>
+                  <Typography variant="caption" fontWeight={600}>
+                    {data.gameName}
+                  </Typography>
+                  <Typography variant="caption">{data.peak}</Typography>
                 </Grid>
-                <Grid>
-                  {/* <Chip
+              </Grid>
+              <Grid>
+                {/* <Chip
                     color="warning"
                     label={
                       <Typography fontSize={11} fontWeight={700}>
@@ -101,35 +126,29 @@ export const Leaderboard = () => {
                       </Typography>
                     }
                   /> */}
-                  <Typography variant="caption" fontWeight={700}>
-                    {data.developer}
-                  </Typography>
-                </Grid>
+                <Typography variant="caption" fontWeight={700}>
+                  {data.developer}
+                </Typography>
               </Grid>
-              <Divider />
-            </>
-          ))}
-        </Grid>
-        <Button
-          sx={{
-            position: "absolute",
-            bottom: 0,
-            alignSelf: "center",
-            margin: 2,
-            backgroundColor: "#d2c3c32a",
-          }}
-          size="small"
-        >
-          <Typography
-            p={0.5}
-            variant="caption"
-            fontWeight={600}
-            color={"black"}
-          >
-            View All Leaderboards
-          </Typography>
-        </Button>
-      </Paper>
-    </Grid>
+            </Grid>
+            <Divider />
+          </>
+        ))}
+      </Stack>
+      {/* <Button
+        sx={{
+          position: "absolute",
+          bottom: 0,
+          alignSelf: "center",
+          margin: 2,
+          backgroundColor: "#d2c3c32a",
+        }}
+        size="small"
+      >
+        <Typography p={0.5} variant="caption" fontWeight={600} color={"black"}>
+          View All Leaderboards
+        </Typography>
+      </Button> */}
+    </Paper>
   );
 };

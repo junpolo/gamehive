@@ -1,10 +1,11 @@
 import {
+  Box,
   Chip,
   Grid,
   IconButton,
   Paper,
-  Slide,
   Typography,
+  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
@@ -14,6 +15,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 export const FeatureGames = () => {
   const theme = useTheme();
+  const isScreenLarge = useMediaQuery(theme.breakpoints.up("lg"));
 
   const hiveBackground =
     "https://cdn.pixabay.com/photo/2012/04/18/16/09/beehive-37436_1280.png";
@@ -40,15 +42,15 @@ export const FeatureGames = () => {
     <Grid container>
       <Paper
         sx={{
-          padding: 5,
+          padding: isScreenLarge ? 5 : 4,
           display: "flex",
           flexDirection: "row",
           borderRadius: 3,
           position: "relative",
           backgroundImage:
             " linear-gradient(89deg, #ffc100 0%, #ff8542 112% 112%)",
-          width: "100%",
           boxShadow: 10,
+          width: "fit-content",
         }}
       >
         <Chip
@@ -69,7 +71,7 @@ export const FeatureGames = () => {
 
         {data.map((slide, index) => (
           <Grid container key={index} gap={5}>
-            <Grid width={"65%"}>
+            <Grid width={{ md: "65%", xs: "100%" }}>
               <Typography variant="body2" fontWeight={550} color={"#5d5b5b"}>
                 {slide.header}
               </Typography>
@@ -87,17 +89,16 @@ export const FeatureGames = () => {
               >
                 {slide.subTitle}
               </Typography>
-              <Grid
-                item
+              <Box
                 display={"flex"}
                 mt={1}
                 gap={1}
                 border={1}
                 borderRadius={2}
-                width={"40%"}
-                justifyContent={"center"}
+                width={{ md: "40%", xs: "100%" }}
+                justifyContent={{ md: "center", xs: "space-between" }}
                 alignItems={"center"}
-                padding={0.5}
+                padding={{ md: 0.5, xs: 1 }}
               >
                 <Typography fontSize={13} fontWeight={600} color={"black"}>
                   Play Trailer
@@ -109,35 +110,35 @@ export const FeatureGames = () => {
                 >
                   <PlayCircleIcon color="success" />
                 </IconButton>
-              </Grid>
+              </Box>
             </Grid>
-
-            <img
-              style={{
-                width: "70%",
-                height: "95%",
-                position: "absolute",
-                bottom: 0,
-                right: 22,
-                opacity: "15%",
-              }}
-              src={hiveBackground}
-              className="img"
-            />
-
-            <Slide direction="up" in timeout={1000}>
-              <img
-                style={{
-                  height: 300,
-                  width: 300,
-                  position: "absolute",
-                  bottom: 0,
-                  right: -40,
-                }}
-                src={slide.image}
-                className="img"
-              />
-            </Slide>
+            {isScreenLarge && (
+              <>
+                <img
+                  style={{
+                    width: "70%",
+                    height: "95%",
+                    position: "absolute",
+                    bottom: 0,
+                    right: 22,
+                    opacity: "15%",
+                  }}
+                  src={hiveBackground}
+                  className="img"
+                />
+                <img
+                  style={{
+                    height: 300,
+                    width: 300,
+                    position: "absolute",
+                    bottom: 0,
+                    right: -40,
+                  }}
+                  src={slide.image}
+                  className="img"
+                />
+              </>
+            )}
           </Grid>
         ))}
       </Paper>
