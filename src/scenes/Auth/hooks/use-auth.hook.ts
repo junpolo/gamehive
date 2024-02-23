@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { sha256 } from "crypto-hash";
 
 import { LoginData } from "@core/data";
+import { cookieHelper } from "@core/helpers";
 import { loginSchema } from "../validations/login.validation";
-import { useState } from "react";
 
 type FormValues = {
   username: string;
@@ -27,13 +29,13 @@ export const useAuth = () => {
   });
 
   const onSubmit = async (form: FormValues) => {
-    setIsValid(true);
-
     if (
       form.username === LoginData.username &&
       form.password === LoginData.password
     ) {
-      console.log("Redirect");
+      const accessToken = await sha256(form.username);
+      cookieHelper.setCookie("access_token", accessToken);
+      window.location.href = "/app";
       return;
     }
 

@@ -17,6 +17,7 @@
     "@hookform/resolvers": "^3.3.4",
     "@mui/icons-material": "^5.15.10",
     "@mui/material": "^5.15.10",
+    "crypto-hash": "^3.0.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "^18.2.0",
