@@ -1,6 +1,5 @@
 import { useRoutes } from "react-router-dom";
 
-import { GuestGuard } from "./guards/guest.guard";
 import { homeRoute, appRoute } from "./list.router";
 
 export const BaseRouter = () => {
@@ -10,7 +9,7 @@ export const BaseRouter = () => {
   const routers = useRoutes([
     {
       path: homeRouter.path,
-      element: <GuestGuard>{homeRouter.element}</GuestGuard>,
+      element: homeRouter.element, // TODO: Put Guard
       children: homeRouter.children,
     },
     {
