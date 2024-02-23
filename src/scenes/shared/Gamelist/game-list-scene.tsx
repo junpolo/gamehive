@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Box, Button } from "@mui/material";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
-import GameList from "@/@core/component/game-list.component";
+
 import games from "./hooks/game-data";
+import GameList from "@core/component/game-list.component";
 
 const GameListScene = () => {
   const [currentPage, setCurrentPage] = useState(1);
