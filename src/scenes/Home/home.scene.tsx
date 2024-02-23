@@ -7,12 +7,14 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 import { StatsComponent } from "./components";
 
 const HomeScene = () => {
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("sm"));
+  const navigate = useNavigate();
 
   return (
     <Grid
@@ -67,6 +69,7 @@ const HomeScene = () => {
               textTransform: "capitalize",
               background: `linear-gradient(to right, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
             }}
+            onClick={() => navigate("auth")}
           >
             Explore The Hive
           </Button>
