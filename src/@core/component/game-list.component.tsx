@@ -1,82 +1,221 @@
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { Box, CardActionArea } from "@mui/material";
-import Avatar from "@mui/material/Avatar";
-import Chip from "@mui/material/Chip";
-import Stack from "@mui/material/Stack";
+import {
+  Avatar,
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  Chip,
+  Grow,
+  IconButton,
+  Paper,
+  Stack,
+  Typography,
+} from "@mui/material";
+import {
+  ArrowForward,
+  BrowserUpdated as BrowserUpdatedIcon,
+  MilitaryTech as MilitaryTechIcon,
+} from "@mui/icons-material";
+import React from "react";
 
-export default function GameList() {
-  return (
-    <Box>
-      <Card sx={{ maxWidth: 250, padding: 1 }}>
-        <CardActionArea>
-          <Box>
-            <CardMedia
-              component="img"
-              height="140"
-              image="/images/game1.jpeg"
-              alt="apex legends"
-              sx={{
-                width: "100%",
-                height: "100%",
-                borderRadius: "8px",
-              }}
-            />
-          </Box>
-          <Stack
-            direction="row"
-            spacing={1}
+interface GameListProps {
+  coverImage?: string;
+  logoImage?: string;
+  characterImage?: string;
+  positionTop?: string | number;
+  positionBottom?: string;
+  positionLeft?: string;
+  imageWidth?: string;
+  imageHeight?: string;
+  transformImage?: boolean;
+  gameTitle?: string;
+  timeoutAnimation?: number;
+  gameAbout?: string;
+}
+
+const GameList = React.forwardRef<HTMLDivElement, GameListProps>(
+  (
+    {
+      coverImage = "/images/cover1.jpeg",
+      logoImage = "/images/logo1.jpeg",
+      characterImage = "/images/character1.png",
+      positionBottom = "",
+      positionTop = "",
+      positionLeft = "",
+      imageHeight = "180px",
+      imageWidth = "180px",
+      transformImage = true,
+      gameTitle = "",
+      timeoutAnimation = 500,
+      gameAbout = "Apex Legends is a team-based battle royale game with diverse characters boasting unique abilities.",
+    },
+    ref
+  ) => {
+    return (
+      <Grow in timeout={timeoutAnimation}>
+        <Box ref={ref} sx={{ position: "relative" }}>
+          <Card
             sx={{
+              width: 250,
               position: "relative",
-              bottom: 10,
-              left: 10,
+              backgroundColor: "#0c131b",
             }}
           >
-            <Chip
-              icon={
-                <Avatar
-                  alt="Natacha"
-                  src="/images/game1_logo.jpeg"
-                  sx={{
-                    width: "13px",
-                    height: "13px",
-                  }}
-                />
-              }
-              label="Apex Legends"
-              variant="outlined"
+            <Box sx={{ padding: 1 }}>
+              <CardMedia
+                component="img"
+                height="140"
+                image={coverImage}
+                alt="apex legends"
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "8px",
+                  position: "relative",
+                }}
+              />
+            </Box>
+            <Stack
+              direction="row"
+              spacing={1}
               sx={{
-                height: "18px",
-                padding: "8px",
-                paddingLeft: 0,
-                backgroundColor: "white",
+                position: "absolute",
+                top: "130px",
+                left: 18,
               }}
-            />
-          </Stack>
+            >
+              <Chip
+                icon={
+                  <Avatar
+                    alt="Natacha"
+                    src={logoImage}
+                    sx={{
+                      width: "13px",
+                      height: "13px",
+                    }}
+                  />
+                }
+                label={
+                  <Typography
+                    variant="caption"
+                    fontFamily={"sans-serif"}
+                    fontSize={"12px"}
+                  >
+                    {gameTitle}
+                  </Typography>
+                }
+                variant="outlined"
+                sx={{
+                  backgroundColor: "#0c131b",
+                  height: "18px",
+                  padding: "8px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              />
+            </Stack>
+            <CardContent>
+              <Typography
+                gutterBottom
+                variant="caption"
+                component="div"
+                fontWeight={"bold"}
+                fontSize={"25px"}
+              >
+                About
+              </Typography>
+              <Typography
+                color="text.secondary"
+                variant="caption"
+                fontFamily={"sans-serif"}
+                fontSize={"12px"}
+                textAlign={"justify"}
+              >
+                {gameAbout}
+              </Typography>
+            </CardContent>
+            <Paper
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                padding: "6px",
+                paddingLeft: 2,
+                paddingRight: 2,
+                borderRadius: 0,
+                backgroundColor: "#080e14",
+              }}
+            >
+              <Stack sx={{ alignItems: "center" }}>
+                <Typography
+                  variant="caption"
+                  fontFamily={"sans-serif"}
+                  fontSize={"12px"}
+                >
+                  Ratings
+                </Typography>
+                <Stack direction={"row"} gap={"2px"}>
+                  <MilitaryTechIcon
+                    sx={{ fontSize: "16px", color: "#ffc100" }}
+                  />
+                  <Typography
+                    variant="caption"
+                    fontFamily={"sans-serif"}
+                    fontSize={"12px"}
+                  >
+                    90%
+                  </Typography>
+                </Stack>
+              </Stack>
+              <Stack sx={{ alignItems: "center" }}>
+                <Typography
+                  variant="caption"
+                  fontFamily={"sans-serif"}
+                  fontSize={"12px"}
+                >
+                  Downloads
+                </Typography>
+                <Stack direction={"row"} gap={"2px"}>
+                  <BrowserUpdatedIcon
+                    sx={{ fontSize: "16px", color: "#ffc100" }}
+                  />
+                  <Typography
+                    variant="caption"
+                    fontFamily={"sans-serif"}
+                    fontSize={"12px"}
+                  >
+                    15M+
+                  </Typography>
+                </Stack>
+              </Stack>
+              <Stack>
+                <IconButton
+                  aria-label="delete"
+                  size="small"
+                  sx={{ backgroundColor: "#FFC100" }}
+                >
+                  <ArrowForward fontSize="inherit" />
+                </IconButton>
+              </Stack>
+            </Paper>
+          </Card>
+          <img
+            src={characterImage}
+            style={{
+              width: imageWidth,
+              height: imageHeight,
+              position: "absolute",
+              top: positionTop,
+              bottom: positionBottom,
+              left: positionLeft,
+              transform: transformImage ? "scaleX(-1)" : "",
+            }}
+          />
+        </Box>
+      </Grow>
+    );
+  }
+);
 
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Lizard
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-      <img
-        src="/images/game1_character.png"
-        style={{
-          width: "180px",
-          height: "180px",
-          position: "absolute",
-          bottom: "74%",
-          left: "120px",
-        }}
-      />
-    </Box>
-  );
-}
+export default GameList;
