@@ -28,16 +28,9 @@ const GameListScene = () => {
       justifyContent={"flex-end"}
       alignItems={"stretch"}
       overflow={"auto"}
-      width={{ xs: "100%", md: "62%" }}
+      width={"100%"}
     >
-      <Box
-        mt={2}
-        sx={{
-          display: "flex",
-          justifyContent: "flex-end",
-          marginBottom: 2,
-        }}
-      >
+      <Box mt={2}>
         <Button onClick={prevPage} disabled={currentPage === 1}>
           <ArrowBack />
         </Button>
@@ -49,7 +42,7 @@ const GameListScene = () => {
         display={"flex"}
         flexDirection={"row"}
         gap={2}
-        justifyContent={"flex-start"}
+        justifyContent={{ xs: "flex-start", md: "center" }}
       >
         {currentGames.map((game) => (
           <GameList key={game.gameTitle} {...game} />
