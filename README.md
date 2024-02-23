@@ -16,3 +16,12 @@ _(replace `bun` with any package manager of your choice )_
 - run `nvm use` _(if you have nvm installed)_
 - run `bun install`
 - run `bun run dev` in the command
+
+## Usage/Examples
+
+### Authentication
+
+Use these mock credentials for authentication
+
+- username: `gamehiveadmin@gamehive.com`
+- password: `S&qq6M#2%#E&5^wezvHqYHoC`

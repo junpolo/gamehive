@@ -1,8 +1,8 @@
 import { Stack, IconButton, Tooltip } from "@mui/material";
 
-import GoogleSVG from "@public/googe-icon.svg";
-import DiscordSVG from "@public/discord-icon.svg";
-import FacebookSVG from "@public/facebook-icon.svg";
+import GoogleSVG from "/googe-icon.svg";
+import DiscordSVG from "/discord-icon.svg";
+import FacebookSVG from "/facebook-icon.svg";
 
 type AuthProviders = {
   name: string;
