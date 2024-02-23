@@ -23,7 +23,6 @@
     /* Path Alias */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
       "@core/*": ["./src/@core/*"],
       "@components": ["./src/components/"],
       "@scenes/*": ["./src/scenes/*"],
