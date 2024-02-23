@@ -17,7 +17,9 @@ _(replace `bun` with any package manager of your choice )_
 - run `bun install`
 - run `bun run dev` in the command
 
-## Login Credentials
+## Usage/Examples
+
+### Authentication
 
 Use these mock credentials for authentication
 
