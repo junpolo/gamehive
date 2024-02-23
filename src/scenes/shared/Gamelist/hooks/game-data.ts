@@ -49,7 +49,7 @@ const games = [
 
   {
     gameTitle: "DOTA 2",
-    positionTop: "-6%",
+    positionBottom: "62%",
     positionLeft: "57%",
     imageHeight: "160px",
     imageWidth: "100px",
@@ -91,10 +91,10 @@ const games = [
   },
   {
     gameTitle: "CSGO 2",
-    positionBottom: "61%",
-    positionLeft: "60px",
+    positionBottom: "60%",
+    positionLeft: "150px",
     imageHeight: "170px",
-    imageWidth: "220px",
+    imageWidth: "90px",
     coverImage: "/images/cover7.jpeg",
     logoImage: "/images/logo7.png",
     characterImage: "/images/character7.png",
