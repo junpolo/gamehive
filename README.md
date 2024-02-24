@@ -6,7 +6,7 @@ A simple game library for displaying games, leaderboards and user analytics.
 
 A hackathon project to implement coding standards and best practices when developing a React application.
 
-### Technologies Used
+## Technologies Used
 
 - [@React + Vite + Typescript](https://github.com/vitejs/vite)
 - Node `v20.11.1`
@@ -18,25 +18,25 @@ A hackathon project to implement coding standards and best practices when develo
 Clone the project
 
 ```bash
-  git clone https://github.com/junpolo/gamehive.git
+git clone https://github.com/junpolo/gamehive.git
 ```
 
 Use the specified Node version for the project
 
 ```bash
-    nvm use
+nvm use
 ```
 
 Install dependencies using `Bun`
 
 ```bash
-    bun install
+bun install
 ```
 
 Start the dev server
 
 ```
-    bun run dev
+bun run dev
 ```
 
 ## Usage/Examples
