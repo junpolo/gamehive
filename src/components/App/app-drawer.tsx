@@ -4,7 +4,6 @@ import {
   ListItemIcon,
   ListItem,
   List,
-  CssBaseline,
   Box,
   Drawer,
   Avatar,
@@ -25,7 +24,6 @@ export const AppDrawer = () => {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <CssBaseline />
       <Box
         sx={{
           display: "flex",
@@ -41,6 +39,9 @@ export const AppDrawer = () => {
       <Drawer
         variant={isScreenLarge ? "permanent" : "temporary"}
         anchor={"left"}
+        sx={{
+          width: 230,
+        }}
         PaperProps={{
           sx: {
             borderWidth: 0,
@@ -68,34 +69,34 @@ export const AppDrawer = () => {
               sx={{ padding: 0.2 }}
               onClick={() => navigate(APP_PATH.dashboard)}
             >
-              <ListItemButton sx={{ borderRadius: 5, padding: 1 }}>
-                <ListItemIcon
-                  sx={{
-                    justifyContent: "center",
-                  }}
-                >
-                  <Tooltip title="Dashboard" placement="right">
+              <Tooltip title="Dashboard" placement="right">
+                <ListItemButton sx={{ borderRadius: 5, padding: 1 }}>
+                  <ListItemIcon
+                    sx={{
+                      justifyContent: "center",
+                    }}
+                  >
                     <Home sx={{ fontSize: 30, color: "#ffc100" }} />
-                  </Tooltip>
-                </ListItemIcon>
-              </ListItemButton>
+                  </ListItemIcon>
+                </ListItemButton>
+              </Tooltip>
             </ListItem>
             <ListItem
               disablePadding
               sx={{ padding: 0.2 }}
               onClick={() => navigate(APP_PATH.analytics)}
             >
-              <ListItemButton sx={{ borderRadius: 5, padding: 1 }}>
-                <ListItemIcon
-                  sx={{
-                    justifyContent: "center",
-                  }}
-                >
-                  <Tooltip title="Analytics" placement="right">
+              <Tooltip title="Analytics" placement="right">
+                <ListItemButton sx={{ borderRadius: 5, padding: 1 }}>
+                  <ListItemIcon
+                    sx={{
+                      justifyContent: "center",
+                    }}
+                  >
                     <Leaderboard sx={{ fontSize: 30, color: "#ffc100" }} />
-                  </Tooltip>
-                </ListItemIcon>
-              </ListItemButton>
+                  </ListItemIcon>
+                </ListItemButton>
+              </Tooltip>
             </ListItem>
           </Grid>
           <Grid>
