@@ -32,7 +32,7 @@ const GameListScene = () => {
         display={"flex"}
         flexDirection={"row"}
         gap={2}
-        justifyContent={{ xs: "flex-start", md: "center" }}
+        justifyContent={"flex-start"}
       >
         {currentItems.map((game) => (
           <GameList key={game.gameTitle} {...game} />

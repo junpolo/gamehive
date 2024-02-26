@@ -1,4 +1,5 @@
 import { useTheme } from "@mui/material/styles";
+import { Avatar, Grid, Tooltip, useMediaQuery } from "@mui/material";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -6,10 +7,10 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import { Avatar, Grid, Tooltip, useMediaQuery } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import LeaderboardIcon from "@mui/icons-material/Leaderboard";
 import LogoutIcon from "@mui/icons-material/Logout";
+
 import { Logo } from "../Logo";
 
 export const AppDrawer = () => {
@@ -19,19 +20,6 @@ export const AppDrawer = () => {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      {/* <AppBar position="fixed" open>
-        <Toolbar>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
-        </Toolbar>
-      </AppBar> */}
       <Box
         sx={{
           display: "flex",
@@ -49,8 +37,6 @@ export const AppDrawer = () => {
         anchor={"left"}
         PaperProps={{
           sx: {
-            // backgroundImage:
-            //   "linear-gradient(to top, #ffc100 0%, #ff8542 100%)",
             borderWidth: 0,
             borderRadius: 7,
             marginLeft: 5,

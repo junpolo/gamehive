@@ -1,20 +1,9 @@
-import { FeatureGames, Leaderboard } from "@/components";
-import {
-  Card,
-  Grid,
-  InputAdornment,
-  Stack,
-  TextField,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
-import { Outlet } from "react-router-dom";
-import { Search } from "@mui/icons-material";
+import { Grid, Stack } from "@mui/material";
+
+import { FeatureGames, Leaderboard } from "@components";
+import GameListScene from "./components/scenes/game-list-scene";
 
 const DashboardScene = () => {
-  const theme = useTheme();
-  const isScreenLarge = useMediaQuery(theme.breakpoints.up("lg"));
   return (
     <Grid
       container
@@ -24,9 +13,9 @@ const DashboardScene = () => {
       pt={{ xs: 13 }}
     >
       <Grid item md={5} xs={12}>
-        <Stack spacing={{ xs: 5, md: 10 }}>
+        <Stack spacing={{ xs: 5, md: 2 }}>
           <FeatureGames />
-          {/* <FeatureGames /> */}
+          <GameListScene />
         </Stack>
       </Grid>
       <Grid item md={3} xs={12}>
