@@ -1,9 +1,7 @@
 import * as React from "react";
+import { Archive, Favorite, Restore } from "@mui/icons-material";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ArchiveIcon from "@mui/icons-material/Archive";
 import Paper from "@mui/material/Paper";
 
 export const AppNavBar = () => {
@@ -36,9 +34,9 @@ export const AppNavBar = () => {
           setValue(newValue);
         }}
       >
-        <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Archive" icon={<ArchiveIcon />} />
+        <BottomNavigationAction label="Recents" icon={<Restore />} />
+        <BottomNavigationAction label="Favorites" icon={<Favorite />} />
+        <BottomNavigationAction label="Archive" icon={<Archive />} />
       </BottomNavigation>
     </Paper>
   );

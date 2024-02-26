@@ -4,6 +4,7 @@ import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import "./featured.scss";
 import { useGetSliderConfig } from "./hooks/use-get-slider-config.hook";
 
 export const FeatureGames = () => {

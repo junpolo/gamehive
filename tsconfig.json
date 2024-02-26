@@ -27,7 +27,6 @@
       "@components": ["./src/components/"],
       "@scenes/*": ["./src/scenes/*"],
       "@layouts": ["./src/layouts/"],
-      "@components/*": ["./src/components/*"]
     }
   },
   "include": ["src"],

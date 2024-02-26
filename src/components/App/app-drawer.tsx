@@ -1,15 +1,18 @@
-import { useTheme } from "@mui/material/styles";
-import { Avatar, Grid, Tooltip, useMediaQuery } from "@mui/material";
-import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
-import CssBaseline from "@mui/material/CssBaseline";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import HomeIcon from "@mui/icons-material/Home";
-import LeaderboardIcon from "@mui/icons-material/Leaderboard";
-import LogoutIcon from "@mui/icons-material/Logout";
+import {
+  useTheme,
+  ListItemButton,
+  ListItemIcon,
+  ListItem,
+  List,
+  CssBaseline,
+  Box,
+  Drawer,
+  Avatar,
+  Grid,
+  Tooltip,
+  useMediaQuery,
+} from "@mui/material";
+import { Home, Leaderboard, Logout } from "@mui/icons-material";
 
 import { Logo } from "../Logo";
 
@@ -65,7 +68,7 @@ export const AppDrawer = () => {
                   }}
                 >
                   <Tooltip title="Dashboard">
-                    <HomeIcon sx={{ fontSize: 30, color: "#ffc100" }} />
+                    <Home sx={{ fontSize: 30, color: "#ffc100" }} />
                   </Tooltip>
                 </ListItemIcon>
               </ListItemButton>
@@ -78,7 +81,7 @@ export const AppDrawer = () => {
                   }}
                 >
                   <Tooltip title="Analytics">
-                    <LeaderboardIcon sx={{ fontSize: 30, color: "#ffc100" }} />
+                    <Leaderboard sx={{ fontSize: 30, color: "#ffc100" }} />
                   </Tooltip>
                 </ListItemIcon>
               </ListItemButton>
@@ -104,7 +107,7 @@ export const AppDrawer = () => {
                   }}
                 >
                   <Tooltip title="Logout">
-                    <LogoutIcon sx={{ fontSize: 30, color: "#ffc100" }} />
+                    <Logout sx={{ fontSize: 30, color: "#ffc100" }} />
                   </Tooltip>
                 </ListItemIcon>
               </ListItemButton>
