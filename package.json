@@ -17,9 +17,9 @@
     "@hookform/resolvers": "^3.3.4",
     "@mui/icons-material": "^5.15.10",
     "@mui/material": "^5.15.10",
-    "framer-motion": "^11.0.5",
     "apexcharts": "^3.46.0",
     "crypto-hash": "^3.0.0",
+    "framer-motion": "^11.0.5",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "react": "^18.2.0",
@@ -31,7 +31,6 @@
     "react-hook-form": "^7.50.1",
     "react-router-dom": "^6.22.1",
     "react-slick": "^0.30.2",
-    "recharts": "^2.12.1",
     "slick-carousel": "^1.8.1",
     "sort-by": "^1.2.0",
     "zod": "^3.22.4"
