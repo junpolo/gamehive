@@ -9,6 +9,7 @@ export const annualSalesData: Partial<ApexOptions> = {
     toolbar: {
       show: false,
     },
+    background: "#fff0",
   },
   dataLabels: {
     enabled: false,
