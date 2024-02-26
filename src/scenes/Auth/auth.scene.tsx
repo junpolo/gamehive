@@ -59,5 +59,4 @@ const EntryScene = () => {
     </Grid>
   );
 };
-
 export default EntryScene;

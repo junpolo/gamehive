@@ -1,0 +1,108 @@
+const games = [
+  {
+    gameTitle: "HALO 4",
+    positionBottom: "57%",
+    positionLeft: "90px",
+    imageHeight: "190px",
+    imageWidth: "160px",
+    coverImage: "/images/cover8.jpeg",
+    logoImage: "/images/logo8.png",
+    characterImage: "/images/character8.png",
+    transformImage: false,
+    timeoutAnimation: 500,
+    gameAbout:
+      "Halo 4 follows Master Chief as he battles new foes and explores a mysterious Forerunner world.",
+  },
+  {
+    gameTitle: "Starfield",
+    positionBottom: "61%",
+    positionLeft: "120px",
+    imageHeight: "160px",
+    imageWidth: "140px",
+    coverImage: "/images/cover4.jpeg",
+    logoImage: "/images/logo4.png",
+    characterImage: "/images/character4.png",
+    transformImage: true,
+    timeoutAnimation: 700,
+    gameAbout:
+      " Starfield is a 2023 action role-playing game by Bethesda Game Studios, where players join space explorers",
+  },
+  {
+    gameTitle: "Minecraft",
+    positionBottom: "93%",
+    positionLeft: "35px",
+    imageHeight: "45px",
+    coverImage: "/images/cover2.jpeg",
+    logoImage: "/images/logo2.png",
+    characterImage: "/images/character2.png",
+    transformImage: false,
+    timeoutAnimation: 900,
+    gameAbout:
+      "Minecraft is a sandbox game where players explore, build, and craft in a blocky, procedurally-generated world.",
+  },
+  {
+    gameTitle: "Apex Legends",
+    positionBottom: "59%",
+    positionLeft: "100px",
+    timeoutAnimation: 1100,
+  },
+
+  {
+    gameTitle: "DOTA 2",
+    positionBottom: "62%",
+    positionLeft: "57%",
+    imageHeight: "160px",
+    imageWidth: "100px",
+    coverImage: "/images/cover3.jpeg",
+    logoImage: "/images/logo3.png",
+    characterImage: "/images/character3.png",
+    transformImage: false,
+    timeoutAnimation: 500,
+    gameAbout:
+      "Dota 2 is a multiplayer online battle arena (MOBA) game developed and published by Valve Corporation",
+  },
+  {
+    gameTitle: "Valorant",
+    positionBottom: "60.5%",
+    positionLeft: "60px",
+    imageHeight: "190px",
+    imageWidth: "240px",
+    coverImage: "/images/cover5.jpeg",
+    logoImage: "/images/logo5.jpeg",
+    characterImage: "/images/character5.png",
+    transformImage: true,
+    timeoutAnimation: 700,
+    gameAbout:
+      "Valorant is a multiplayer tactical shooter game developed and published by Riot Games.",
+  },
+  {
+    gameTitle: "RUST",
+    positionBottom: "61%",
+    positionLeft: "50px",
+    imageHeight: "170px",
+    imageWidth: "280px",
+    coverImage: "/images/cover6.jpg",
+    logoImage: "/images/logo6.png",
+    characterImage: "/images/character6.png",
+    transformImage: false,
+    timeoutAnimation: 900,
+    gameAbout:
+      "Rust is a multiplayer survival game with crafting elements developed by Facepunch Studios.",
+  },
+  {
+    gameTitle: "CSGO 2",
+    positionBottom: "60%",
+    positionLeft: "150px",
+    imageHeight: "170px",
+    imageWidth: "90px",
+    coverImage: "/images/cover7.jpeg",
+    logoImage: "/images/logo7.png",
+    characterImage: "/images/character7.png",
+    transformImage: false,
+    timeoutAnimation: 1100,
+    gameAbout:
+      "CS:GO is a multiplayer first-person shooter game developed by Valve Corporation.",
+  },
+];
+
+export default games;
