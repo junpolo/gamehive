@@ -1,0 +1,46 @@
+.Slider:focus {
+  outline: none;
+}
+
+.slick-dots {
+  position: absolute;
+  display: flex !important;
+  width: auto !important;
+  height: 10% !important;
+}
+
+.slick-dots li {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 10px !important;
+  height: 10px !important;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+}
+
+.slick-dots li button:before {
+  width: 20px !important;
+  height: 20px !important;
+  font-size: 10px !important;
+  content: "•";
+  text-align: start !important;
+  opacity: 0.25;
+  color: #ffffff !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 0.75;
+  color: #ffffff !important;
+}

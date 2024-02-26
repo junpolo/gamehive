@@ -4,3 +4,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.img {
+  -webkit-user-drag: none;
+  user-select: none;
+}

@@ -1,12 +1,14 @@
-import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
+import { Grid } from "@mui/material";
+
+import { AppDrawer, AppNavBar } from "@components";
 
 export const AppLayout = () => {
   return (
-    <main style={{ height: "inherit" }}>
-      <Suspense>
-        <Outlet />
-      </Suspense>
-    </main>
+    <Grid>
+      <AppDrawer />
+      <AppNavBar />
+      <Outlet />
+    </Grid>
   );
 };

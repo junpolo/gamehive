@@ -26,7 +26,7 @@
       "@core/*": ["./src/@core/*"],
       "@components": ["./src/components/"],
       "@scenes/*": ["./src/scenes/*"],
-      "@layouts": ["./src/layouts/"]
+      "@layouts": ["./src/layouts/"],
     }
   },
   "include": ["src"],
