@@ -1,6 +1,4 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import RestoreIcon from "@mui/icons-material/Restore";
@@ -19,6 +17,10 @@ export const AppNavBar = () => {
   return (
     <Paper
       sx={{
+        display: {
+          xs: "block",
+          sm: "none",
+        },
         position: "fixed",
         bottom: 0,
         left: 0,

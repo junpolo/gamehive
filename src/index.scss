@@ -11,22 +11,15 @@
 
 .slick-dots {
   position: absolute;
-  top: 0;
   display: flex !important;
-  justify-content: left;
-  text-align: left;
-  padding: 20px !important;
   width: auto !important;
   height: 10% !important;
 }
 
 .slick-dots li {
-  position: relative;
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin: 0 5px;
-  padding: 0;
   cursor: pointer;
 }
 
@@ -36,7 +29,6 @@
   display: block;
   width: 10px !important;
   height: 10px !important;
-  padding: 5px;
   cursor: pointer;
   color: transparent;
   border: 0;
@@ -44,23 +36,20 @@
 }
 
 .slick-dots li button:before {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 20px !important;
   height: 20px !important;
   font-size: 10px !important;
   content: "•";
-  text-align: center;
+  text-align: start !important;
   opacity: 0.25;
-  color: #fa7a01 !important;
+  color: #ffffff !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .slick-dots li.slick-active button:before {
   opacity: 0.75;
-  color: #fa7a01 !important;
+  color: #ffffff !important;
 }
 
 .img {
