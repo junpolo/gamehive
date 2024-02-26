@@ -1,25 +1,14 @@
-import { useState } from "react";
 import { Box, Button } from "@mui/material";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
 import games from "./hooks/game-data";
 import GameList from "@core/component/game-list.component";
+import usePagination from "./hooks/use-pagination-hooks";
 
 const GameListScene = () => {
-  const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 4;
-
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentGames = games.slice(indexOfFirstItem, indexOfLastItem);
-
-  const nextPage = () => {
-    setCurrentPage((prevPage) => prevPage + 1);
-  };
-
-  const prevPage = () => {
-    setCurrentPage((prevPage) => prevPage - 1);
-  };
+  const { nextPage, prevPage, currentItems, hasNextPage, hasPrevPage } =
+    usePagination(games, itemsPerPage);
 
   return (
     <Box
@@ -32,10 +21,10 @@ const GameListScene = () => {
       width={"100%"}
     >
       <Box mt={2}>
-        <Button onClick={prevPage} disabled={currentPage === 1}>
+        <Button onClick={prevPage} disabled={!hasPrevPage}>
           <ArrowBack />
         </Button>
-        <Button onClick={nextPage} disabled={indexOfLastItem >= games.length}>
+        <Button onClick={nextPage} disabled={!hasNextPage}>
           <ArrowForward />
         </Button>
       </Box>
@@ -45,7 +34,7 @@ const GameListScene = () => {
         gap={2}
         justifyContent={{ xs: "flex-start", md: "center" }}
       >
-        {currentGames.map((game) => (
+        {currentItems.map((game) => (
           <GameList key={game.gameTitle} {...game} />
         ))}
       </Box>
