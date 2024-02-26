@@ -1,7 +1,7 @@
 import { Box, Button } from "@mui/material";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
-import games from "./hooks/game-data";
+import games from "./data/game-data";
 import GameList from "@core/component/game-list.component";
 import usePagination from "./hooks/use-pagination-hooks";
 
