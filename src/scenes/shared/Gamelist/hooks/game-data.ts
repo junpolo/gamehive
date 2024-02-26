@@ -69,7 +69,7 @@ const games = [
     imageWidth: "240px",
     coverImage: "/images/cover5.jpeg",
     logoImage: "/images/logo5.jpeg",
-    characterImage: "/images/character5.webp",
+    characterImage: "/images/character5.png",
     transformImage: true,
     timeoutAnimation: 700,
     gameAbout:
