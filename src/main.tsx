@@ -4,7 +4,6 @@ import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router-dom";
 import { CookiesProvider } from "react-cookie";
 
-
 import "./index.scss";
 import App from "./App";
 

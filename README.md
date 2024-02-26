@@ -1,21 +1,43 @@
-# User Management System
+# GameHive
 
-A hackathon project
+A simple game library for displaying games, leaderboards and user analytics.
 
-### Technologies Used
+#### Project Context
+
+A hackathon project to implement coding standards and best practices when developing a React application.
+
+## Technologies Used
 
 - [@React + Vite + Typescript](https://github.com/vitejs/vite)
 - Node `v20.11.1`
 - NPM `v10.2.4`
+- bun
 
-### Installation
+### Run Locally
 
-_(replace `bun` with any package manager of your choice )_
+Clone the project
 
-- Clone the repository
-- run `nvm use` _(if you have nvm installed)_
-- run `bun install`
-- run `bun run dev` in the command
+```bash
+git clone https://github.com/junpolo/gamehive.git
+```
+
+Use the specified Node version for the project
+
+```bash
+nvm use
+```
+
+Install dependencies using `Bun`
+
+```bash
+bun install
+```
+
+Start the dev server
+
+```
+bun run dev
+```
 
 ## Usage/Examples
 
