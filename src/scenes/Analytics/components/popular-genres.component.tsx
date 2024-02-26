@@ -1,31 +1,8 @@
 import { Card, CardContent, CardHeader } from "@mui/material";
-import { ApexOptions } from "apexcharts";
-
 import Chart from "react-apexcharts";
-import "../styles/analytics.scss";
 
-const options: Partial<ApexOptions> = {
-  labels: ["RPG", "MOBA", "Battle Royale", "Action", "Shooter"],
-  series: [156893, 267389, 412999, 90345, 100934],
-  stroke: {
-    colors: ["##ffffff00"],
-    width: [1],
-  },
-  legend: {
-    position: "bottom",
-    itemMargin: {
-      vertical: 20,
-    },
-    onItemClick: {
-      toggleDataSeries: false,
-    },
-  },
-  chart: {
-    events: {
-      click: () => null,
-    },
-  },
-};
+import "../styles/analytics.scss";
+import { popularGenresData } from "@core/data";
 
 export const PopularGenres = () => {
   return (
@@ -39,8 +16,8 @@ export const PopularGenres = () => {
       />
       <CardContent className="custom-chart-legend">
         <Chart
-          options={options}
-          series={options.series}
+          options={popularGenresData}
+          series={popularGenresData.series}
           type="pie"
           height={510}
         />
