@@ -2,7 +2,7 @@ import { Box, Button } from "@mui/material";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
 import games from "../data/game-data";
-import GameList from "@scenes/Dashboard/components/GameList/game-list.component";
+import GameList from "@scenes/Dashboard/components/game-list.component";
 import usePagination from "../hooks/use-pagination-hooks";
 
 const GameListScene = () => {
