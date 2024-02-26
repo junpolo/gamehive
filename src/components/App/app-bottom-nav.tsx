@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Archive, Favorite, Restore } from "@mui/icons-material";
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import Paper from "@mui/material/Paper";
 
 export const AppNavBar = () => {
