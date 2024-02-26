@@ -8,14 +8,13 @@ import {
   useTheme,
 } from "@mui/material";
 
-import { MostPlayed, PopularGenres } from "./components";
+import { MostPlayed, PopularGenres, AnnualSales } from "./components";
 
 const AnalyticsScene = () => {
   const theme = useTheme();
 
   return (
     <Grid container spacing={2}>
-      {/* Sales */}
       <Grid item xs={12} md={4}>
         <Card>
           <CardContent component={Stack} gap={2} alignItems="center">
@@ -74,13 +73,16 @@ const AnalyticsScene = () => {
         </Card>
       </Grid>
 
-      {/* Graphs */}
-      <Grid item xs={12} sm={6} md={7}>
+      <Grid item xs={12} md={6} lg={7}>
         <MostPlayed />
       </Grid>
 
-      <Grid item xs={12} sm={6} md={5}>
+      <Grid item xs={12} md={6} lg={5}>
         <PopularGenres />
+      </Grid>
+
+      <Grid item xs={12}>
+        <AnnualSales />
       </Grid>
     </Grid>
   );
