@@ -2,10 +2,16 @@ import { ApexOptions } from "apexcharts";
 import { blue, orange } from "@mui/material/colors";
 
 export const annualSalesData: Partial<ApexOptions> = {
+  theme: {
+    mode: "dark",
+  },
   chart: {
     toolbar: {
       show: false,
     },
+  },
+  dataLabels: {
+    enabled: false,
   },
   series: [
     {
