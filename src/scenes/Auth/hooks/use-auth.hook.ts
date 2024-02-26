@@ -29,17 +29,22 @@ export const useAuth = () => {
   });
 
   const onSubmit = async (form: FormValues) => {
-    if (
-      form.username === LoginData.username &&
-      form.password === LoginData.password
-    ) {
-      const accessToken = await sha256(form.username);
-      cookieHelper.setCookie("access_token", accessToken);
-      window.location.href = "/app";
-      return;
-    }
+    const accessToken = await sha256(LoginData.username);
+    cookieHelper.setCookie("access_token", accessToken);
+    window.location.href = "/app";
+    return;
 
-    setIsValid(false);
+    // [oc]
+    // if (
+    //   form.username === LoginData.username &&
+    //   form.password === LoginData.password
+    // ) {
+    // const accessToken = await sha256(form.username);
+    // cookieHelper.setCookie("access_token", accessToken);
+    // window.location.href = "/app";
+    // return;
+    // }
+    // setIsValid(false);
   };
 
   return {
