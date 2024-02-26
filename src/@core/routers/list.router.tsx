@@ -4,6 +4,7 @@ import {
   AuthScene,
   DashboardScene,
   HomeScene,
+  AnalyticsScene,
 } from "./constants/lazy-load.constant";
 import { HomeLayout, AppLayout } from "@layouts";
 
@@ -33,6 +34,10 @@ export const appRoute: RouteObject[] = [
       {
         path: "dashboard",
         element: <DashboardScene />,
+      },
+      {
+        path: "analytics",
+        element: <AnalyticsScene />,
       },
     ],
   },
