@@ -15,10 +15,13 @@ import {
 import { Home, Leaderboard, Logout } from "@mui/icons-material";
 
 import { Logo } from "../Logo";
+import { useNavigate } from "react-router";
+import { APP_PATH } from "@core/routers";
 
 export const AppDrawer = () => {
   const theme = useTheme();
   const isScreenLarge = useMediaQuery(theme.breakpoints.up("lg"));
+  const navigate = useNavigate();
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -60,27 +63,35 @@ export const AppDrawer = () => {
           }}
         >
           <Grid>
-            <ListItem disablePadding sx={{ padding: 0.2 }}>
+            <ListItem
+              disablePadding
+              sx={{ padding: 0.2 }}
+              onClick={() => navigate(APP_PATH.dashboard)}
+            >
               <ListItemButton sx={{ borderRadius: 5, padding: 1 }}>
                 <ListItemIcon
                   sx={{
                     justifyContent: "center",
                   }}
                 >
-                  <Tooltip title="Dashboard">
+                  <Tooltip title="Dashboard" placement="right">
                     <Home sx={{ fontSize: 30, color: "#ffc100" }} />
                   </Tooltip>
                 </ListItemIcon>
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding sx={{ padding: 0.2 }}>
+            <ListItem
+              disablePadding
+              sx={{ padding: 0.2 }}
+              onClick={() => navigate(APP_PATH.analytics)}
+            >
               <ListItemButton sx={{ borderRadius: 5, padding: 1 }}>
                 <ListItemIcon
                   sx={{
                     justifyContent: "center",
                   }}
                 >
-                  <Tooltip title="Analytics">
+                  <Tooltip title="Analytics" placement="right">
                     <Leaderboard sx={{ fontSize: 30, color: "#ffc100" }} />
                   </Tooltip>
                 </ListItemIcon>
