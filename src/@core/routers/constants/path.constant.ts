@@ -5,4 +5,6 @@ export const HOME_PATH = {
 
 export const APP_PATH = {
   root: "/app",
+  dashboard: "/app/dashboard",
+  analytics: "/app/analytics",
 };

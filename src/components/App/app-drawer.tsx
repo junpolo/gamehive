@@ -4,8 +4,6 @@ import {
   ListItemIcon,
   ListItem,
   List,
-  CssBaseline,
-  Box,
   Drawer,
   Avatar,
   Grid,
@@ -16,18 +14,24 @@ import {
 import { Home, Leaderboard, Logout } from "@mui/icons-material";
 
 import { Logo } from "../Logo";
+import { useNavigate } from "react-router";
+import { APP_PATH } from "@core/routers";
 
 export const AppDrawer = () => {
   const theme = useTheme();
   const isScreenLarge = useMediaQuery(theme.breakpoints.up("lg"));
+  const navigate = useNavigate();
 
   return (
     <Drawer
       variant={isScreenLarge ? "permanent" : "temporary"}
       anchor={"left"}
+      sx={{
+        width: 230,
+      }}
       PaperProps={{
         sx: {
-          overflow: isScreenLarge ? "visible" : "hidden",
+          overflow: "visible",
           borderWidth: 0,
           borderRadius: 7,
           marginLeft: 5,
@@ -61,31 +65,39 @@ export const AppDrawer = () => {
         }}
       >
         <Grid>
-          <ListItem disablePadding sx={{ padding: 0.2 }} className="shine">
-            <ListItemButton sx={{ borderRadius: 5, padding: 1 }}>
-              <ListItemIcon
-                sx={{
-                  justifyContent: "center",
-                }}
-              >
-                <Tooltip title="Dashboard">
+          <ListItem
+            disablePadding
+            sx={{ padding: 0.2 }}
+            onClick={() => navigate(APP_PATH.dashboard)}
+          >
+            <Tooltip title="Dashboard" placement="right">
+              <ListItemButton sx={{ borderRadius: 5, padding: 1 }}>
+                <ListItemIcon
+                  sx={{
+                    justifyContent: "center",
+                  }}
+                >
                   <Home sx={{ fontSize: 30, color: "#ffc100" }} />
-                </Tooltip>
-              </ListItemIcon>
-            </ListItemButton>
+                </ListItemIcon>
+              </ListItemButton>
+            </Tooltip>
           </ListItem>
-          <ListItem disablePadding sx={{ padding: 0.2 }}>
-            <ListItemButton sx={{ borderRadius: 5, padding: 1 }}>
-              <ListItemIcon
-                sx={{
-                  justifyContent: "center",
-                }}
-              >
-                <Tooltip title="Analytics">
+          <ListItem
+            disablePadding
+            sx={{ padding: 0.2 }}
+            onClick={() => navigate(APP_PATH.analytics)}
+          >
+            <Tooltip title="Analytics" placement="right">
+              <ListItemButton sx={{ borderRadius: 5, padding: 1 }}>
+                <ListItemIcon
+                  sx={{
+                    justifyContent: "center",
+                  }}
+                >
                   <Leaderboard sx={{ fontSize: 30, color: "#ffc100" }} />
-                </Tooltip>
-              </ListItemIcon>
-            </ListItemButton>
+                </ListItemIcon>
+              </ListItemButton>
+            </Tooltip>
           </ListItem>
         </Grid>
         <Grid>
@@ -116,6 +128,5 @@ export const AppDrawer = () => {
         </Grid>
       </List>
     </Drawer>
-    // </Box>
   );
 };

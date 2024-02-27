@@ -19,7 +19,7 @@ const DashboardScene = () => {
           <GameListScene />
         </Stack>
       </Grid>
-      <Grid item md={3} xs={12}>
+      <Grid item xs={12} md={4}>
         <Leaderboard />
       </Grid>
     </Grid>
