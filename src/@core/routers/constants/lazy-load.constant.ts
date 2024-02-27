@@ -14,3 +14,7 @@ export const DashboardScene = Suspense(
 export const AnalyticsScene = Suspense(
   lazy(() => import("@scenes/Analytics/analytics.scene"))
 );
+
+export const ProfileScene = Suspense(
+  lazy(() => import("@scenes/Profile/profile.scene"))
+);

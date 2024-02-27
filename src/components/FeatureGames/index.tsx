@@ -20,8 +20,30 @@ export const FeatureGames = () => {
           // [oc] backgroundImage:
           // [oc]   " linear-gradient(89deg, #ffc100 0%, #ff8542 112% 112%)",
           boxShadow: 10,
+          backgroundColor: "transparent",
         }}
       >
+        <video
+          loop
+          autoPlay
+          muted
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            top: 0,
+            left: 0,
+            zIndex: 0,
+            objectFit: "cover",
+            borderRadius: 10,
+          }}
+        >
+          <source
+            src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/504400/2b0792025824dfe8a1aa161ebe74ddee128d39cd.mp4"
+            type="video/mp4"
+          />
+        </video>
+
         <Chip
           variant="filled"
           color="warning"

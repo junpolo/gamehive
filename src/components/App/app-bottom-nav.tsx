@@ -22,6 +22,7 @@ export const AppNavBar = () => {
         bottom: 0,
         left: 0,
         right: 0,
+        zIndex: 1,
       }}
       ref={ref}
       elevation={3}

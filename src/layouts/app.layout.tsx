@@ -1,13 +1,14 @@
 import { Outlet } from "react-router-dom";
 import { Grid } from "@mui/material";
 
-import { AppDrawer, AppNavBar } from "@components";
+import { AppNavBar, AppDrawer, AppBar } from "@components";
 
 export const AppLayout = () => {
   return (
     <Grid>
       <AppDrawer />
       <AppNavBar />
+      {/* <AppBar /> */}
       <Outlet />
     </Grid>
   );

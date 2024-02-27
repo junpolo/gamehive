@@ -12,9 +12,10 @@ const DashboardScene = () => {
       p={5}
       pt={{ xs: 13 }}
     >
-      <Grid item md={5} xs={12}>
-        <Stack spacing={{ xs: 5, md: 2 }}>
+      <Grid item md={6} xs={12}>
+        <Stack spacing={2}>
           <FeatureGames />
+          <GameListScene />
           <GameListScene />
         </Stack>
       </Grid>
