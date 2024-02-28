@@ -1,5 +1,12 @@
-import React from "react";
-import { Box, Chip, IconButton, Paper, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  Paper,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,83 +16,98 @@ import { useGetSliderConfig } from "./hooks/use-get-slider-config.hook";
 
 export const FeatureGames = () => {
   const { data, Slider, sliderSettings } = useGetSliderConfig();
+  const theme = useTheme();
+
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
-    <React.Suspense>
-      <Paper
-        sx={{
-          padding: 5,
-          borderRadius: 3,
-          position: "relative",
-          overflow: "visible",
-          // [oc] backgroundImage:
-          // [oc]   " linear-gradient(89deg, #ffc100 0%, #ff8542 112% 112%)",
-          boxShadow: 10,
-        }}
-      >
-        <Chip
-          variant="filled"
-          color="warning"
-          label={
-            <Typography variant="caption" fontWeight={600}>
-              Announcement
-            </Typography>
-          }
-          sx={{
-            position: "absolute",
-            top: -15,
-            boxShadow: 10,
-            padding: 2.2,
-          }}
-        />
-        <Slider {...sliderSettings}>
-          {data.map((slide, index) => (
-            <Stack key={index}>
-              <Box
-                width={{ md: "80%", xs: "100%" }}
-                sx={{
-                  backgroundImage: slide.image,
+    <Paper
+      sx={{
+        borderRadius: 3,
+        position: "relative",
+        overflow: "hidden",
+        boxShadow: 2,
+        backgroundColor: "transparent",
+      }}
+    >
+      <Slider {...sliderSettings}>
+        {data.map((slide, index) => (
+          <Stack key={index} position={"relative"} overflow={"visible"}>
+            <Box key={index} height={300}>
+              <video
+                loop
+                poster={slide.image}
+                autoPlay
+                controls
+                muted
+                onError={(e) => console.error("Video Error", e)}
+                onLoadedData={() => console.log("Video is ready to play")}
+                style={{
+                  position: "absolute",
+                  zIndex: -1,
+                  width: "100%",
+                  height: isMobile ? "60%" : "100%",
+                  objectFit: isMobile ? "contain" : "fill",
+                  borderTopLeftRadius: 12,
+                  borderTopRightRadius: 12,
+                  top: 0,
                 }}
               >
-                <Typography variant="body2" fontWeight={550} color={"#c9c2c2"}>
+                <source src={slide.video} type="video/mp4" />
+              </video>
+            </Box>
+            <Box
+              textAlign={"justify"}
+              padding={3}
+              gap={{ xs: 1 }}
+              sx={{
+                backdropFilter: "blur(8px)",
+                display: "flex",
+                flexDirection: { xs: "column", md: "row" },
+              }}
+            >
+              <Box width={{ xs: "100%", md: "65%" }}>
+                <Typography
+                  variant="body2"
+                  fontWeight={550}
+                  color={"text.primary"}
+                >
                   {slide.header}
                 </Typography>
-                <Typography variant="h6" fontWeight={700}>
+                <Typography
+                  variant="h4"
+                  fontWeight={700}
+                  color={theme.palette.primary.dark}
+                >
                   {slide.title}
                 </Typography>
                 <Typography
                   variant="subtitle2"
                   pt={2}
                   fontWeight={500}
-                  fontSize={11.5}
+                  fontSize={12}
                 >
                   {slide.subTitle}
                 </Typography>
-                <Box
-                  display={"flex"}
-                  mt={1}
-                  gap={1}
-                  pt={1}
-                  width={{ md: "50%", xs: "100%" }}
-                  justifyContent={{ md: "start", xs: "space-between" }}
-                  alignItems={"center"}
-                  padding={{ md: 0.5, xs: 1 }}
-                >
-                  <Typography fontSize={13} fontWeight={600}>
-                    Play Trailer
-                  </Typography>
-                  <IconButton
-                    color="primary"
-                    aria-label="add an alarm"
-                    sx={{ padding: 0 }}
-                  >
-                    <PlayCircleIcon color="success" />
-                  </IconButton>
-                </Box>
               </Box>
-            </Stack>
-          ))}
-        </Slider>
-      </Paper>
-    </React.Suspense>
+              <Box
+                display={"flex"}
+                gap={1}
+                justifyContent={{ md: "center", xs: "space-between" }}
+                alignItems={"center"}
+                width={"35%"}
+              >
+                <Typography variant="h4" fontWeight={600}>
+                  Play
+                </Typography>
+                <IconButton color="primary" sx={{ padding: 0 }}>
+                  <PlayCircleIcon fontSize="large" color="success" />
+                </IconButton>
+              </Box>
+            </Box>
+          </Stack>
+        ))}
+      </Slider>
+    </Paper>
   );
 };

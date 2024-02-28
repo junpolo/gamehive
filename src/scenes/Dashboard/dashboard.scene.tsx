@@ -1,19 +1,22 @@
 import { Grid, Stack } from "@mui/material";
 
-import { FeatureGames, Leaderboard } from "@components";
+import { FeatureGames, Leaderboard, Summary } from "@components";
 import GameListScene from "./components/scenes/game-list-scene";
 
 const DashboardScene = () => {
   return (
-    <Grid container spacing={4}>
-      <Grid item xs={12} md={8}>
-        <Stack spacing={4}>
+    <Grid container spacing={{ xs: 4, md: 5 }}>
+      <Grid item md={8} xs={12}>
+        <Stack spacing={3}>
           <FeatureGames />
+          <Summary />
           <GameListScene />
         </Stack>
       </Grid>
-      <Grid item xs={12} md={4}>
-        <Leaderboard />
+      <Grid item md={4} xs={12}>
+        <Stack spacing={3}>
+          <Leaderboard />
+        </Stack>
       </Grid>
     </Grid>
   );
