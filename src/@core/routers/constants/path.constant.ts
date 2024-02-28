@@ -7,4 +7,5 @@ export const APP_PATH = {
   root: "/app",
   dashboard: "/app/dashboard",
   analytics: "/app/analytics",
+  profile: "/app/profile",
 };

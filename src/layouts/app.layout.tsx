@@ -1,13 +1,12 @@
 import { Outlet } from "react-router-dom";
 import { Box, Container } from "@mui/material";
 
-import { AppNavBar, AppDrawer, AppBar } from "@components";
+import { AppNavBar, AppBar } from "@components";
 
 export const AppLayout = () => {
   return (
     <Box display="flex" flexDirection="row">
-      {/* <AppBar /> */}
-      <AppDrawer />
+      <AppBar />
       <Box
         component="main"
         display="flex"
@@ -17,10 +16,10 @@ export const AppLayout = () => {
         maxWidth="-webkit-fill-available"
         sx={{
           paddingBottom: { xs: "80px", md: "50px" },
-          paddingTop: { xs: "50px", sm: "80px", lg: "50px" },
+          paddingTop: { xs: "90px", sm: "100px", lg: "100px" },
         }}
       >
-        <Container>
+        <Container maxWidth={"xl"}>
           <Outlet />
         </Container>
       </Box>

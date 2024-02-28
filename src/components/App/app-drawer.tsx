@@ -9,11 +9,10 @@ import {
   Grid,
   Tooltip,
   useMediaQuery,
-  Toolbar,
+  Box,
 } from "@mui/material";
 import { Home, Leaderboard, Logout } from "@mui/icons-material";
 
-import { Logo } from "../Logo";
 import { useNavigate } from "react-router";
 import { APP_PATH } from "@core/routers";
 
@@ -43,19 +42,6 @@ export const AppDrawer = () => {
         },
       }}
     >
-      <Toolbar
-        className="img"
-        sx={{
-          display: "flex",
-          position: "absolute",
-          top: -110,
-          left: -20,
-          paddingLeft: 5,
-          paddingTop: 5,
-        }}
-      >
-        <Logo />
-      </Toolbar>
       <List
         sx={{
           height: "100%",
@@ -64,7 +50,7 @@ export const AppDrawer = () => {
           flexDirection: "column",
         }}
       >
-        <Grid>
+        <Box>
           <ListItem
             disablePadding
             sx={{ padding: 0.2 }}
@@ -99,10 +85,13 @@ export const AppDrawer = () => {
               </ListItemButton>
             </Tooltip>
           </ListItem>
-        </Grid>
+        </Box>
         <Grid>
           <ListItem disablePadding sx={{ padding: 0.2 }}>
-            <ListItemButton sx={{ borderRadius: 5, padding: 1 }}>
+            <ListItemButton
+              sx={{ borderRadius: 5, padding: 1 }}
+              onClick={() => navigate(APP_PATH.profile)}
+            >
               <ListItemIcon
                 sx={{
                   justifyContent: "center",

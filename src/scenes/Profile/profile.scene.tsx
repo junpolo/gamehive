@@ -80,14 +80,8 @@ const Profile = () => {
   ];
 
   return (
-    <Grid
-      container
-      pt={{ xs: 13 }}
-      padding={4}
-      justifyContent={"center"}
-      spacing={2}
-    >
-      <Grid item md={6} xs={12}>
+    <Grid container justifyContent={"center"} spacing={2}>
+      <Grid item md={7} xs={12}>
         <Stack gap={2}>
           <Typography variant="h5" fontWeight={600}>
             Profile
@@ -131,7 +125,11 @@ const Profile = () => {
                 <Typography variant="body1" fontWeight={600}>
                   Clevane Villareal
                 </Typography>
-                <Typography variant="caption" sx={{ color: "#A2A0A0" }}>
+                <Typography
+                  variant="caption"
+                  color={theme.palette.primary.main}
+                  fontWeight={600}
+                >
                   Administrator
                 </Typography>
                 <Typography variant="caption" sx={{ color: "#A2A0A0" }}>
@@ -165,6 +163,7 @@ const Profile = () => {
                   justifyContent: "space-evenly",
                   overflow: "auto",
                   gap: 10,
+                  textAlign: "center",
                   WebkitOverflowScrolling: "touch",
                   "&::-webkit-scrollbar": {
                     display: !isMobile ? "none" : "auto",
