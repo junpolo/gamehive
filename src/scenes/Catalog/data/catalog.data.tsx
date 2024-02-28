@@ -1,4 +1,4 @@
-import { Row } from "../hooks/game-catalog.hooks";
+import { Row } from "../hooks/game-catalog.hook";
 
 export function createData(
   name: string,

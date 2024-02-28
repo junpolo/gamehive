@@ -29,7 +29,7 @@ import {
 } from "@mui/icons-material";
 
 import { rows, tags } from "./data/catalog.data";
-import { useGameCatalog } from "./hooks/game-catalog.hooks";
+import { useGameCatalog } from "./hooks/game-catalog.hook";
 
 export default function GameCatalogScene() {
   const {
