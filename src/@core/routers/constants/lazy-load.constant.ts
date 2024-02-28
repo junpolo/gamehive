@@ -21,4 +21,8 @@ export const AnalyticsScene = Suspense(
 
 export const ProfileScene = Suspense(
   lazy(() => import("@scenes/Profile/profile.scene"))
+  );
+
+export const GameCatalog = Suspense(
+  lazy(() => import("@scenes/Catalog/game-catalog.scene"))
 );
