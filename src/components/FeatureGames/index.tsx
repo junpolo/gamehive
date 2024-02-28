@@ -63,7 +63,6 @@ export const FeatureGames = () => {
               sx={{
                 backdropFilter: "blur(8px)",
                 display: "flex",
-                justifyContent: "space-between",
                 flexDirection: { xs: "column", md: "row" },
               }}
             >
@@ -76,7 +75,7 @@ export const FeatureGames = () => {
                   {slide.header}
                 </Typography>
                 <Typography
-                  variant="h6"
+                  variant="h4"
                   fontWeight={700}
                   color={theme.palette.primary.dark}
                 >
@@ -94,8 +93,9 @@ export const FeatureGames = () => {
               <Box
                 display={"flex"}
                 gap={1}
-                justifyContent={{ md: "start", xs: "space-between" }}
+                justifyContent={{ md: "center", xs: "space-between" }}
                 alignItems={"center"}
+                width={"35%"}
               >
                 <Typography variant="h4" fontWeight={600}>
                   Play
