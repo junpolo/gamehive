@@ -3,8 +3,12 @@ import { lazy } from "react";
 import { Suspense } from "@components";
 
 // HOME
-export const AuthScene = lazy(() => import("@scenes/Auth/auth.scene"));
-export const HomeScene = lazy(() => import("@scenes/Home/home.scene"));
+export const AuthScene = Suspense(
+  lazy(() => import("@scenes/Auth/auth.scene"))
+);
+export const HomeScene = Suspense(
+  lazy(() => import("@scenes/Home/home.scene"))
+);
 
 // APP
 export const DashboardScene = Suspense(
