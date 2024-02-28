@@ -8,4 +8,5 @@ export const APP_PATH = {
   dashboard: "/app/dashboard",
   analytics: "/app/analytics",
   profile: "/app/profile",
+  catalog: "/app/catalog",
 };
