@@ -89,7 +89,7 @@ export const AppBar = () => {
               </IconButton>
             </Tooltip>
             <Tooltip title="Catalog">
-              <IconButton onClick={() => navigate(APP_PATH.profile)}>
+              <IconButton onClick={() => navigate(APP_PATH.catalog)}>
                 <ManageSearch sx={{ fontSize: 30, color: "#ffc100" }} />
               </IconButton>
             </Tooltip>
