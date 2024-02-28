@@ -1,3 +1,5 @@
+import React from "react";
+import { useNavigate } from "react-router";
 import {
   Box,
   Avatar,
@@ -16,9 +18,6 @@ import {
 import { Home, Leaderboard, ManageSearch } from "@mui/icons-material";
 
 import { Logo } from "../Logo";
-import React from "react";
-
-import { useNavigate } from "react-router";
 import { APP_PATH } from "@core/routers";
 
 const BackdropScroll = ({ children }: { children: React.ReactElement }) => {
@@ -140,7 +139,13 @@ export const AppBar = () => {
                   label={<Typography variant="caption">Admin</Typography>}
                 />
                 <Divider />
-                <MenuItem sx={{ borderRadius: 3 }}>
+                <MenuItem
+                  sx={{ borderRadius: 3 }}
+                  onClick={() => {
+                    navigate(APP_PATH.profile);
+                    handleCloseUserMenu();
+                  }}
+                >
                   <Typography textAlign="center">Profile</Typography>
                 </MenuItem>
                 <MenuItem sx={{ borderRadius: 3 }}>
