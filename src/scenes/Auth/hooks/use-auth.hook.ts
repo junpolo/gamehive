@@ -29,22 +29,16 @@ export const useAuth = () => {
   });
 
   const onSubmit = async (form: FormValues) => {
-    const accessToken = await sha256(LoginData.username);
-    cookieHelper.setCookie("access_token", accessToken);
-    window.location.href = "/app";
-    return;
-
-    // [oc]
-    // if (
-    //   form.username === LoginData.username &&
-    //   form.password === LoginData.password
-    // ) {
-    // const accessToken = await sha256(form.username);
-    // cookieHelper.setCookie("access_token", accessToken);
-    // window.location.href = "/app";
-    // return;
-    // }
-    // setIsValid(false);
+    if (
+      form.username === LoginData.username &&
+      form.password === LoginData.password
+    ) {
+      const accessToken = await sha256(form.username);
+      cookieHelper.setCookie("access_token", accessToken);
+      window.location.href = "/app";
+      return;
+    }
+    setIsValid(false);
   };
 
   return {

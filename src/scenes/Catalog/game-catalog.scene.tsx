@@ -1,7 +1,9 @@
+import React from "react";
 import {
   Box,
   Checkbox,
   Chip,
+  Fade,
   FormControlLabel,
   FormGroup,
   Grid,
@@ -27,8 +29,16 @@ import {
   Cancel,
   Clear,
 } from "@mui/icons-material";
+import Popper from "@mui/material/Popper";
+import Paper from "@mui/material/Paper";
 
-import { rows, tags } from "./data/catalog.data";
+import {
+  defaultCover,
+  gameCovers,
+  gamesWithWhiteBackground,
+  rows,
+  tags,
+} from "./data/catalog.data";
 import { useGameCatalog } from "./hooks/game-catalog.hook";
 
 export default function GameCatalogScene() {
@@ -52,6 +62,11 @@ export default function GameCatalogScene() {
     filteredRows,
     paginatedRows,
   } = useGameCatalog(rows);
+
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [open, setOpen] = React.useState<string | null>(null);
+
+  const Apex = "/videos/gta6.mp4";
 
   return (
     <Grid container item xs={12} md={12} spacing={2}>
@@ -156,7 +171,129 @@ export default function GameCatalogScene() {
                         alignItems: "center",
                       }}
                     >
-                      <img src="/images/cover4.jpeg" width={"97px"} />
+                      <Popper
+                        open={open === row.name}
+                        anchorEl={anchorEl}
+                        placement="left-start"
+                        transition
+                      >
+                        {({ TransitionProps }) => (
+                          <Fade {...TransitionProps} timeout={350}>
+                            <Paper
+                              sx={{
+                                padding: "10px",
+                                margin: 1,
+                                backgroundColor: "#e3eaef",
+                              }}
+                            >
+                              <Box
+                                sx={{
+                                  backgroundColor: "white",
+                                  width: "40px",
+                                  borderRadius: "3px",
+                                  display: "flex",
+                                  justifyContent: "center",
+                                }}
+                              >
+                                <Typography
+                                  variant="caption"
+                                  fontSize={"10px"}
+                                  color={"#000"}
+                                >
+                                  store
+                                </Typography>
+                              </Box>
+                              <video
+                                width="250"
+                                height="160"
+                                autoPlay
+                                muted
+                                loop
+                              >
+                                <source src={Apex} type="video/mp4" />
+                              </video>
+                              <Stack>
+                                <Typography
+                                  variant="caption"
+                                  fontSize={"14px"}
+                                  fontWeight={"bold"}
+                                  color={"#000"}
+                                >
+                                  {row.name}
+                                </Typography>
+                                <Typography
+                                  variant="caption"
+                                  fontSize={"11px"}
+                                  color={"#000"}
+                                >
+                                  Developer: {row.developer}
+                                  <br />
+                                  Release Date: {row.release}
+                                </Typography>
+                                <Box
+                                  sx={{
+                                    backgroundColor: "#918181",
+                                    borderRadius: 1,
+                                    padding: 1,
+                                    display: "flex",
+                                    alignItems: "center",
+                                  }}
+                                >
+                                  <Typography
+                                    variant="caption"
+                                    fontSize={"11px"}
+                                    color={"#000"}
+                                  >
+                                    Ratings: {row.ratings}
+                                  </Typography>
+                                  {parseInt(row.ratings) > 90 ? (
+                                    <ArrowUpward
+                                      sx={{
+                                        fontSize: "10px",
+                                        color: "lime",
+                                        marginRight: 1,
+                                      }}
+                                    />
+                                  ) : parseInt(row.ratings) >= 80 ? (
+                                    <IndeterminateCheckBox
+                                      sx={{
+                                        fontSize: "10px",
+                                        color: "orange",
+                                        marginRight: 1,
+                                      }}
+                                    />
+                                  ) : (
+                                    <ArrowDownward
+                                      sx={{
+                                        fontSize: "10px",
+                                        color: "red",
+                                        marginRight: 1,
+                                      }}
+                                    />
+                                  )}
+                                </Box>
+                              </Stack>
+                            </Paper>
+                          </Fade>
+                        )}
+                      </Popper>
+                      <img
+                        src={gameCovers[row.name] || defaultCover}
+                        width={"110px"}
+                        height={"55px"}
+                        style={{
+                          backgroundColor: gamesWithWhiteBackground.includes(
+                            row.name
+                          )
+                            ? "white"
+                            : "transparent",
+                        }}
+                        onMouseEnter={(event) => {
+                          setAnchorEl(event.currentTarget);
+                          setOpen(row.name);
+                        }}
+                        onMouseLeave={() => setOpen(null)}
+                      />
                       <Box display={"flex"} flexDirection={"column"}>
                         <Typography variant={"caption"} fontSize={"14px"}>
                           {row.name}
@@ -172,6 +309,7 @@ export default function GameCatalogScene() {
                         </Box>
                       </Box>
                     </TableCell>
+
                     <TableCell align="left" sx={{ border: "none", padding: 0 }}>
                       <Typography variant={"caption"} fontSize={"14px"}>
                         {row.release}

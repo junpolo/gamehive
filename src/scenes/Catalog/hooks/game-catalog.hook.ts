@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export type Row = {
   name: string;
@@ -6,6 +6,7 @@ export type Row = {
   release: string;
   ratings: string;
   price: number | string;
+  developer: string;
 };
 
 export function useGameCatalog(initialRows: Row[]) {
