@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Box,
   Checkbox,
@@ -39,7 +40,6 @@ import {
   tags,
 } from "./data/catalog.data";
 import { useGameCatalog } from "./hooks/game-catalog.hook";
-import React from "react";
 
 export default function GameCatalogScene() {
   const {
