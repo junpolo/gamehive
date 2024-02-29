@@ -18,6 +18,7 @@ export const AppNavBar = () => {
       sx={{
         display: {
           xs: "block",
+
           sm: "none",
         },
         position: "fixed",

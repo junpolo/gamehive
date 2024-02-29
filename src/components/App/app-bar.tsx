@@ -77,11 +77,11 @@ export const AppBar = () => {
             <Box className="img" onClick={() => navigate(APP_PATH.root)}>
               <Logo />
             </Box>
-            <Box gap={1} display={{ md: "flex", xs: "none" }}>
+            <Box gap={1} display={{ md: "flex", sm: "flex", xs: "none" }}>
               <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                 <TextField
                   size="small"
-                  sx={{ width: 300 }}
+                  sx={{ width: { sm: 150, lg: 300 } }}
                   placeholder="Search...."
                 />
               </Box>
