@@ -19,6 +19,7 @@ export const FeatureGames = () => {
   const theme = useTheme();
 
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isLarge = useMediaQuery(theme.breakpoints.up("xl"));
 
   return (
     <Paper
@@ -57,7 +58,6 @@ export const FeatureGames = () => {
               </video>
             </Box>
             <Box
-              textAlign={"justify"}
               padding={3}
               gap={{ xs: 1 }}
               sx={{
@@ -66,7 +66,13 @@ export const FeatureGames = () => {
                 flexDirection: { xs: "column", md: "row" },
               }}
             >
-              <Box width={{ xs: "100%", md: "65%" }}>
+              <Box
+                display={"flex"}
+                width={{ xs: "100%", md: "65%" }}
+                height={isLarge && isMobile ? undefined : 150}
+                justifyContent={"center"}
+                flexDirection={"column"}
+              >
                 <Typography
                   variant="body2"
                   fontWeight={550}
@@ -82,6 +88,7 @@ export const FeatureGames = () => {
                   {slide.title}
                 </Typography>
                 <Typography
+                  textAlign={"justify"}
                   variant="subtitle2"
                   pt={2}
                   fontWeight={500}
@@ -93,9 +100,12 @@ export const FeatureGames = () => {
               <Box
                 display={"flex"}
                 gap={1}
-                justifyContent={{ md: "center", xs: "space-between" }}
+                justifyContent={{
+                  md: "center",
+                  xs: "space-between",
+                }}
                 alignItems={"center"}
-                width={"35%"}
+                width={{ md: "35%" }}
               >
                 <Typography variant="h4" fontWeight={600}>
                   Play
