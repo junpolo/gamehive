@@ -15,6 +15,9 @@ import {
   Chip,
   Divider,
   Grid,
+  Container,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { Home, Leaderboard, ManageSearch } from "@mui/icons-material";
 
@@ -41,6 +44,8 @@ const BackdropScroll = ({ children }: { children: React.ReactElement }) => {
 
 export const AppBar = () => {
   const navigate = useNavigate();
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
 
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
@@ -62,107 +67,115 @@ export const AppBar = () => {
   return (
     <BackdropScroll>
       <MUIAppBar component="header">
-        <Grid
-          container
-          sx={{
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Grid item md={9.6} sm={11.3} xs={12}>
-            <Toolbar
-              sx={{ alignItems: "center", justifyContent: "space-between" }}
-            >
-              <Box className="img" onClick={() => navigate(APP_PATH.root)}>
-                <Logo />
-              </Box>
-              <Box gap={1} display={{ md: "flex", xs: "none" }}>
-                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                  <TextField
-                    size="small"
-                    sx={{ width: 300 }}
-                    placeholder="Search...."
-                  />
+        <Container maxWidth={"xl"}>
+          <Grid
+            container
+            sx={{
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Grid item md={12} sm={12} xs={12}>
+              <Toolbar
+                style={{
+                  padding: isLargeScreen ? 0 : undefined,
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Box className="img" onClick={() => navigate(APP_PATH.root)}>
+                  <Logo />
                 </Box>
-                <Tooltip title="Home">
-                  <IconButton onClick={() => navigate(APP_PATH.dashboard)}>
-                    <Home sx={{ fontSize: 30, color: "#ffc100" }} />
-                  </IconButton>
-                </Tooltip>
-                <Tooltip title="Leaderboard">
-                  <IconButton onClick={() => navigate(APP_PATH.analytics)}>
-                    <Leaderboard sx={{ fontSize: 30, color: "#ffc100" }} />
-                  </IconButton>
-                </Tooltip>
-                <Tooltip title="Catalog">
-                  <IconButton onClick={() => navigate(APP_PATH.catalog)}>
-                    <ManageSearch sx={{ fontSize: 30, color: "#ffc100" }} />
-                  </IconButton>
-                </Tooltip>
-              </Box>
-
-              <Box sx={{ flexGrow: 0, display: "flex", alignItems: "center" }}>
-                <Tooltip title="Open settings">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar
-                      sx={{ height: 35, width: 35, bgcolor: "#ffc100" }}
-                      alt="Remy Sharp"
-                      src="https://m.media-amazon.com/images/M/MV5BZjIwMzc0MDQtZjg0OC00MjRmLTgwZTItOWViYjdlMTRmYjQwXkEyXkFqcGdeQXVyNTI5NjIyMw@@._V1_.jpg"
-                    />
-                  </IconButton>
-                </Tooltip>
-                <Menu
-                  sx={{ mt: "45px" }}
-                  id="menu-appbar"
-                  anchorEl={anchorElUser}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={Boolean(anchorElUser)}
-                  onClose={handleCloseUserMenu}
-                >
-                  <Box
-                    sx={{
-                      padding: 1,
-                      textAlign: "center",
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: 1,
-                      width: 180,
-                    }}
-                  >
-                    <Typography variant="subtitle2">Taylor Swift</Typography>
-                    <Chip
-                      sx={{ borderRadius: 2 }}
+                <Box gap={1} display={{ md: "flex", xs: "none" }}>
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    <TextField
                       size="small"
-                      color="primary"
-                      label={<Typography variant="caption">Admin</Typography>}
+                      sx={{ width: 300 }}
+                      placeholder="Search...."
                     />
-                    <Divider />
-                    <MenuItem
-                      sx={{ borderRadius: 3 }}
-                      onClick={() => {
-                        navigate(APP_PATH.profile);
-                        handleCloseUserMenu();
+                  </Box>
+                  <Tooltip title="Home">
+                    <IconButton onClick={() => navigate(APP_PATH.dashboard)}>
+                      <Home sx={{ fontSize: 30, color: "#ffc100" }} />
+                    </IconButton>
+                  </Tooltip>
+                  <Tooltip title="Leaderboard">
+                    <IconButton onClick={() => navigate(APP_PATH.analytics)}>
+                      <Leaderboard sx={{ fontSize: 30, color: "#ffc100" }} />
+                    </IconButton>
+                  </Tooltip>
+                  <Tooltip title="Catalog">
+                    <IconButton onClick={() => navigate(APP_PATH.catalog)}>
+                      <ManageSearch sx={{ fontSize: 30, color: "#ffc100" }} />
+                    </IconButton>
+                  </Tooltip>
+                </Box>
+
+                <Box
+                  sx={{ flexGrow: 0, display: "flex", alignItems: "center" }}
+                >
+                  <Tooltip title="Open settings">
+                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                      <Avatar
+                        sx={{ height: 35, width: 35, bgcolor: "#ffc100" }}
+                        alt="Remy Sharp"
+                        src="https://m.media-amazon.com/images/M/MV5BZjIwMzc0MDQtZjg0OC00MjRmLTgwZTItOWViYjdlMTRmYjQwXkEyXkFqcGdeQXVyNTI5NjIyMw@@._V1_.jpg"
+                      />
+                    </IconButton>
+                  </Tooltip>
+                  <Menu
+                    sx={{ mt: "45px" }}
+                    id="menu-appbar"
+                    anchorEl={anchorElUser}
+                    anchorOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    open={Boolean(anchorElUser)}
+                    onClose={handleCloseUserMenu}
+                  >
+                    <Box
+                      sx={{
+                        padding: 1,
+                        textAlign: "center",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 1,
+                        width: 180,
                       }}
                     >
-                      <Typography textAlign="center">Profile</Typography>
-                    </MenuItem>
-                    <MenuItem sx={{ borderRadius: 3 }} onClick={handleLogout}>
-                      <Typography textAlign="center">Logout</Typography>
-                    </MenuItem>
-                  </Box>
-                </Menu>
-              </Box>
-            </Toolbar>
+                      <Typography variant="subtitle2">Taylor Swift</Typography>
+                      <Chip
+                        sx={{ borderRadius: 2 }}
+                        size="small"
+                        color="primary"
+                        label={<Typography variant="caption">Admin</Typography>}
+                      />
+                      <Divider />
+                      <MenuItem
+                        sx={{ borderRadius: 3 }}
+                        onClick={() => {
+                          navigate(APP_PATH.profile);
+                          handleCloseUserMenu();
+                        }}
+                      >
+                        <Typography textAlign="center">Profile</Typography>
+                      </MenuItem>
+                      <MenuItem sx={{ borderRadius: 3 }} onClick={handleLogout}>
+                        <Typography textAlign="center">Logout</Typography>
+                      </MenuItem>
+                    </Box>
+                  </Menu>
+                </Box>
+              </Toolbar>
+            </Grid>
           </Grid>
-        </Grid>
+        </Container>
       </MUIAppBar>
     </BackdropScroll>
   );
