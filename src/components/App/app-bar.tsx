@@ -19,6 +19,7 @@ import { Home, Leaderboard, ManageSearch } from "@mui/icons-material";
 
 import { Logo } from "../Logo";
 import { APP_PATH } from "@core/routers";
+import { cookieHelper } from "@core/helpers";
 
 const BackdropScroll = ({ children }: { children: React.ReactElement }) => {
   const trigger = useScrollTrigger({
@@ -50,6 +51,11 @@ export const AppBar = () => {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const handleLogout = () => {
+    cookieHelper.clearCookies();
+    window.location.href = "/";
   };
 
   return (
@@ -148,7 +154,7 @@ export const AppBar = () => {
                 >
                   <Typography textAlign="center">Profile</Typography>
                 </MenuItem>
-                <MenuItem sx={{ borderRadius: 3 }}>
+                <MenuItem sx={{ borderRadius: 3 }} onClick={handleLogout}>
                   <Typography textAlign="center">Logout</Typography>
                 </MenuItem>
               </Box>
