@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 
-import { Summary } from "@components";
+import { Summary } from "../components";
 
 export const SummaryScene = () => (
   <Box>

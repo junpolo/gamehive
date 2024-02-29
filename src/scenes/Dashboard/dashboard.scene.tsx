@@ -1,8 +1,8 @@
 import { Grid, Stack } from "@mui/material";
 
 import { FeatureGames, Leaderboard } from "@components";
-import GameListScene from "./components/scenes/game-list-scene";
-import { SummaryScene } from "./components/scenes/summary.scene";
+import GameListScene from "./scenes/game-list-scene";
+import { SummaryScene } from "./scenes/summary.scene";
 
 const DashboardScene = () => {
   return (
