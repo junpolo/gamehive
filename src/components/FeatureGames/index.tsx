@@ -69,7 +69,7 @@ export const FeatureGames = () => {
               <Box
                 display={"flex"}
                 width={{ xs: "100%", md: "65%" }}
-                height={isLarge && isMobile ? undefined : 220}
+                height={isLarge && isMobile ? undefined : 150}
                 justifyContent={"center"}
                 flexDirection={"column"}
               >
