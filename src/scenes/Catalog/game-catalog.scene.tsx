@@ -28,7 +28,13 @@ import {
   Clear,
 } from "@mui/icons-material";
 
-import { rows, tags } from "./data/catalog.data";
+import {
+  defaultCover,
+  gameCovers,
+  gamesWithWhiteBackground,
+  rows,
+  tags,
+} from "./data/catalog.data";
 import { useGameCatalog } from "./hooks/game-catalog.hook";
 
 export default function GameCatalogScene() {
@@ -156,7 +162,18 @@ export default function GameCatalogScene() {
                         alignItems: "center",
                       }}
                     >
-                      <img src="/images/cover4.jpeg" width={"97px"} />
+                      <img
+                        src={gameCovers[row.name] || defaultCover}
+                        width={"110px"}
+                        height={"55px"}
+                        style={{
+                          backgroundColor: gamesWithWhiteBackground.includes(
+                            row.name
+                          )
+                            ? "white"
+                            : "transparent",
+                        }}
+                      />
                       <Box display={"flex"} flexDirection={"column"}>
                         <Typography variant={"caption"} fontSize={"14px"}>
                           {row.name}
