@@ -1,7 +1,8 @@
 import { Grid, Stack } from "@mui/material";
 
-import { FeatureGames, Leaderboard, Summary } from "@components";
-import GameListScene from "./components/scenes/game-list-scene";
+import { FeatureGames, Leaderboard } from "@components";
+import GameListScene from "./scenes/game-list-scene";
+import { SummaryScene } from "./scenes/summary.scene";
 
 const DashboardScene = () => {
   return (
@@ -9,7 +10,7 @@ const DashboardScene = () => {
       <Grid item lg={8} xs={12}>
         <Stack spacing={3}>
           <FeatureGames />
-          <Summary />
+          <SummaryScene />
           <GameListScene />
         </Stack>
       </Grid>
