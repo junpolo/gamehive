@@ -33,8 +33,8 @@ const BackdropScroll = ({ children }: { children: React.ReactElement }) => {
   return React.cloneElement(children, {
     sx: {
       boxShadow: "none",
-      backdropFilter: trigger ? "blur(3px)" : "none",
-      backgroundColor: trigger ? "#e7e0e015" : "none",
+      backdropFilter: trigger ? "blur(6px)" : "none",
+      backgroundColor: trigger ? "#0c131bbb" : "#0c131b",
       borderRadius: 0,
       transition: "background-color 0.3s",
     },
@@ -65,7 +65,7 @@ export const AppBar = () => {
 
   return (
     <BackdropScroll>
-      <MUIAppBar component="header">
+      <MUIAppBar component="header" style={{ backgroundImage: "none" }}>
         <Container maxWidth={"xl"}>
           <Toolbar
             style={{
