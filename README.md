@@ -5,7 +5,7 @@ A simple game library for displaying games, leaderboards and user analytics.
 
 ### Screenshots
 
-Some of the things that you can see within the app
+Some of the things that you can see within the app:
 
 
 ![Landing Scene](https://github.com/junpolo/gamehive/assets/25507436/76d68f2f-f1f1-4135-be28-f6a898b1271b)
